@@ -1,0 +1,81 @@
+# https://leetcode.com/problems/two-sum/
+
+from typing import List
+
+n = [11,7,2,2,9,99,999,9999]
+t = 4 
+
+class Solution:
+    # hash table
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # case 1, A is a list
+        # number in A, O(len(A))
+
+        # B is dict
+        # number in B, O(1)
+
+        # key (nums[i]) : value (idx)
+        # dic['hi'] = [1, 2, 3]
+        # dic = {'hi': [1, 2, 3]}
+        dic = {}
+        
+        print(list(range(len(nums))))
+
+        for i in range(len(nums)):
+            print('1', dic)
+            if target - nums[i] in dic:
+                return [dic[target - nums[i]], i]
+
+            # dic.update({nums[i]: i}) # same as dic[num[i]]=i dic is empty,add elements that fufill the require
+            # print(dic)
+            # dic[nums[i]]=i
+
+            # # dic[key] = val
+            # # append k;v pair into dict
+            key = nums[i]
+            val = i
+            dic[key] = val
+            # # dic[nums[i]] = i  different from dic={num[i]}
+            print('2', dic)
+
+
+    def twoSum_1(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                # print(i, j)
+                if nums[i] + nums[j] == target:
+                    print(i,j)
+
+
+    def twoSum_2(self, nums: List[int], target: int) -> List[int]:
+        # solution here
+        
+        # n = [2,2,11,15]
+        # loop thru indices, i and j are indices 
+        # for i in range(len(nums))
+        #   for j in range(B)
+        # 2 ranges or if i not = j 
+        #       do sth
+
+        for i in range(len(nums)):
+            # print(i, nums[i])
+            for j in range(len(nums)):
+                if i != j:
+                    print(i, j)
+                    s = nums[i] + nums[j]
+
+                    # if s == target:
+                    #     return [i,j]
+
+            
+        # a list of indices
+        return
+
+
+  
+# control / can comments +-
+
+
+
+print(Solution().twoSum(n, t))
+# print ("Hello Worold")
